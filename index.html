@@ -1,1 +1,927 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>🍌 BANANA OS™</title>
 
+<style>
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#fff700,#ffb300,#ff8c00);
+    color:#241900;
+    min-height:100vh;
+}
+
+header{
+    background:#111;
+    color:#ffe600;
+    padding:18px 30px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:100;
+    box-shadow:0 5px 20px #0008;
+}
+
+.logo{
+    font-size:25px;
+    font-weight:bold;
+}
+
+.status{
+    color:#00ff66;
+    font-size:14px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+    padding:25px;
+}
+
+.hero{
+    background:#fff4a3;
+    border:5px solid #111;
+    border-radius:25px;
+    padding:30px;
+    text-align:center;
+    box-shadow:10px 10px 0 #111;
+    margin-bottom:30px;
+}
+
+.hero h1{
+    font-size:45px;
+}
+
+.subtitle{
+    margin:10px 0 20px;
+    font-size:18px;
+}
+
+.bigbanana{
+    font-size:130px;
+    display:inline-block;
+    animation:bananaFloat 2s infinite alternate;
+    cursor:pointer;
+    transition:.4s;
+}
+
+@keyframes bananaFloat{
+    from{transform:rotate(-8deg) translateY(0);}
+    to{transform:rotate(8deg) translateY(-15px);}
+}
+
+.rotating{
+    animation:rotateBanana .7s linear infinite !important;
+}
+
+@keyframes rotateBanana{
+    from{transform:rotate(0deg);}
+    to{transform:rotate(360deg);}
+}
+
+button{
+    border:3px solid #111;
+    background:#ffdd00;
+    padding:12px 18px;
+    margin:6px;
+    border-radius:12px;
+    font-weight:bold;
+    cursor:pointer;
+    box-shadow:4px 4px 0 #111;
+    transition:.15s;
+}
+
+button:hover{
+    transform:translate(2px,2px);
+    box-shadow:2px 2px 0 #111;
+}
+
+button:active{
+    transform:translate(4px,4px);
+    box-shadow:none;
+}
+
+.danger{
+    background:#ff3030;
+    color:white;
+}
+
+.green{
+    background:#32e875;
+}
+
+.blue{
+    background:#4cb5ff;
+}
+
+.section-title{
+    background:#111;
+    color:#ffe600;
+    padding:15px 20px;
+    border-radius:15px;
+    margin:30px 0 15px;
+    font-size:24px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+    gap:15px;
+}
+
+.stat{
+    background:#fff;
+    border:3px solid #111;
+    border-radius:15px;
+    padding:20px;
+    text-align:center;
+    box-shadow:5px 5px 0 #111;
+}
+
+.stat .value{
+    font-size:32px;
+    font-weight:bold;
+    margin-top:8px;
+}
+
+.tools{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.tool{
+    background:#fff;
+    border:3px solid #111;
+    border-radius:18px;
+    padding:20px;
+    text-align:center;
+    cursor:pointer;
+    box-shadow:5px 5px 0 #111;
+    transition:.2s;
+}
+
+.tool:hover{
+    transform:rotate(-2deg) scale(1.03);
+}
+
+.tool-icon{
+    font-size:45px;
+}
+
+.tool h3{
+    margin:10px;
+}
+
+.terminal{
+    background:#050505;
+    color:#00ff66;
+    border:4px solid #111;
+    border-radius:15px;
+    padding:20px;
+    font-family:monospace;
+    min-height:180px;
+    box-shadow:7px 7px 0 #111;
+}
+
+#terminal{
+    white-space:pre-line;
+}
+
+.meme-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+    gap:20px;
+}
+
+.meme{
+    background:white;
+    border:4px solid #111;
+    border-radius:18px;
+    overflow:hidden;
+    box-shadow:7px 7px 0 #111;
+    transition:.2s;
+}
+
+.meme:hover{
+    transform:rotate(1deg) scale(1.02);
+}
+
+.meme-picture{
+    height:190px;
+    background:linear-gradient(135deg,#222,#555);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    position:relative;
+    overflow:hidden;
+}
+
+.face{
+    font-size:90px;
+    filter:drop-shadow(3px 3px 0 #000);
+}
+
+.movie-tag{
+    position:absolute;
+    top:10px;
+    left:10px;
+    background:#ffe000;
+    border:2px solid #111;
+    padding:5px 9px;
+    border-radius:8px;
+    font-size:12px;
+    font-weight:bold;
+}
+
+.meme-caption{
+    padding:15px;
+    font-size:17px;
+    font-weight:bold;
+}
+
+.malayalam{
+    font-size:20px;
+    margin-top:7px;
+}
+
+.meme:nth-child(2) .meme-picture{
+    background:linear-gradient(135deg,#283593,#90caf9);
+}
+
+.meme:nth-child(3) .meme-picture{
+    background:linear-gradient(135deg,#8e0000,#ff5252);
+}
+
+.meme:nth-child(4) .meme-picture{
+    background:linear-gradient(135deg,#311b92,#7e57c2);
+}
+
+.meme:nth-child(5) .meme-picture{
+    background:linear-gradient(135deg,#004d40,#26a69a);
+}
+
+.meme:nth-child(6) .meme-picture{
+    background:linear-gradient(135deg,#e65100,#ffb300);
+}
+
+.meme:nth-child(7) .meme-picture{
+    background:linear-gradient(135deg,#212121,#757575);
+}
+
+.meme:nth-child(8) .meme-picture{
+    background:linear-gradient(135deg,#880e4f,#f06292);
+}
+
+.meme:nth-child(9) .meme-picture{
+    background:linear-gradient(135deg,#263238,#607d8b);
+}
+
+.meme:nth-child(10) .meme-picture{
+    background:linear-gradient(135deg,#1b5e20,#66bb6a);
+}
+
+.generator{
+    background:#fff;
+    border:4px solid #111;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:7px 7px 0 #111;
+}
+
+#generatedMeme{
+    font-size:25px;
+    font-weight:bold;
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    padding:15px;
+}
+
+.btech{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:15px;
+}
+
+.department{
+    background:#fff;
+    border:3px solid #111;
+    padding:20px;
+    border-radius:15px;
+    box-shadow:5px 5px 0 #111;
+}
+
+.department h3{
+    margin-bottom:8px;
+}
+
+footer{
+    background:#111;
+    color:#ffe600;
+    text-align:center;
+    padding:30px;
+    margin-top:40px;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    inset:0;
+    background:#000b;
+    align-items:center;
+    justify-content:center;
+    z-index:999;
+}
+
+.modal-box{
+    background:#fff4a3;
+    border:5px solid #111;
+    border-radius:20px;
+    padding:30px;
+    max-width:500px;
+    width:90%;
+    text-align:center;
+    box-shadow:10px 10px 0 #000;
+}
+
+.modal-box h2{
+    margin-bottom:15px;
+}
+
+.close{
+    background:#ff3333;
+    color:white;
+}
+
+@media(max-width:600px){
+    .hero h1{
+        font-size:32px;
+    }
+
+    .bigbanana{
+        font-size:90px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">🍌 BANANA OS™</div>
+    <div class="status">● SYSTEM USELESS</div>
+</header>
+
+<div class="container">
+
+<section class="hero">
+
+<h1>🍌 AI BANANA COMMAND CENTER</h1>
+
+<p class="subtitle">
+The world's most unnecessary B.Tech project.
+</p>
+
+<div id="banana" class="bigbanana" onclick="rotateBanana()">🍌</div>
+
+<br>
+
+<button onclick="rotateBanana()">🔄 ROTATE BANANA</button>
+<button onclick="scanBanana()" class="green">🤖 AI SCAN</button>
+<button onclick="randomEvent()" class="blue">🎲 RANDOM EVENT</button>
+<button onclick="emergency()" class="danger">🚨 EMERGENCY</button>
+
+<p id="message" style="margin-top:20px;font-weight:bold;">
+System waiting for banana...
+</p>
+
+</section>
+
+
+<div class="section-title">📊 BANANA INTELLIGENCE</div>
+
+<div class="stats">
+
+<div class="stat">
+    <div>🔄 Rotation</div>
+    <div class="value" id="rotation">0°</div>
+</div>
+
+<div class="stat">
+    <div>🧠 Banana IQ</div>
+    <div class="value" id="iq">3</div>
+</div>
+
+<div class="stat">
+    <div>😐 Mood</div>
+    <div class="value" id="mood">Confused</div>
+</div>
+
+<div class="stat">
+    <div>☠️ Threat</div>
+    <div class="value" id="threat">0%</div>
+</div>
+
+</div>
+
+
+<div class="section-title">🎓 B.TECH DEPARTMENT DATABASE</div>
+
+<div class="btech">
+
+<div class="department">
+<h3>💻 CSE</h3>
+<p>Code → Error → Google → Copy → Pray</p>
+</div>
+
+<div class="department">
+<h3>🤖 AI & DS</h3>
+<p>AI predicts everything except the supply.</p>
+</div>
+
+<div class="department">
+<h3>📡 ECE</h3>
+<p>Signal undetected. Attendance also undetected.</p>
+</div>
+
+<div class="department">
+<h3>⚙️ ME</h3>
+<p>Engineering + Workshop + Sleep deprivation.</p>
+</div>
+
+<div class="department">
+<h3>🏗️ CE</h3>
+<p>Concrete is strong. Student confidence isn't.</p>
+</div>
+
+<div class="department">
+<h3>🔌 EEE</h3>
+<p>Current undu. Motivation illa.</p>
+</div>
+
+</div>
+
+
+<div class="section-title">🛠️ USELESS BANANA TOOLS</div>
+
+<div class="tools">
+
+<div class="tool" onclick="openModal('Banana Court','🍌 Banana has been found guilty of being yellow.')">
+<div class="tool-icon">⚖️</div>
+<h3>Banana Court</h3>
+<p>Justice for bananas.</p>
+</div>
+
+<div class="tool" onclick="openModal('Banana Dating','🍌 Banana matched with 🍌. Relationship status: Peel Pending.')">
+<div class="tool-icon">❤️</div>
+<h3>Banana Dating</h3>
+<p>Find your perfect banana.</p>
+</div>
+
+<div class="tool" onclick="openModal('Banana GPS','📍 You are currently 0.3 bananas away from another banana.')">
+<div class="tool-icon">📍</div>
+<h3>Banana GPS</h3>
+<p>Where banana?</p>
+</div>
+
+<div class="tool" onclick="openModal('Banana Weather','☀️ Today: 98% chance of banana.')">
+<div class="tool-icon">🌦️</div>
+<h3>Banana Weather</h3>
+<p>Forecast: yellow.</p>
+</div>
+
+<div class="tool" onclick="openModal('Banana Bank','💰 Balance: ₹0.00 bananas.')">
+<div class="tool-icon">🏦</div>
+<h3>Banana Bank</h3>
+<p>Interest rate: 0 bananas.</p>
+</div>
+
+<div class="tool" onclick="openModal('Banana University','🎓 Degree unlocked: B.Tech in Banana Rotation.')">
+<div class="tool-icon">🎓</div>
+<h3>Banana University</h3>
+<p>100% useless education.</p>
+</div>
+
+</div>
+
+
+<!-- MOVIE MEMES -->
+
+<div class="section-title">🎬 MALAYALAM MOVIE MEME DATABASE™</div>
+
+<div class="meme-grid">
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">MOVIE MODE</span>
+<div class="face">😳</div>
+</div>
+<div class="meme-caption">
+Sir: "Project useful aano?"
+<div class="malayalam">
+Me: "Banana rotate cheyyum sir." 🍌
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">EXAM MODE</span>
+<div class="face">😨📚</div>
+</div>
+<div class="meme-caption">
+Exam tomorrow.
+<div class="malayalam">
+"Padikkan thudangiyath ippo aanu." 😭
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">VIVA</span>
+<div class="face">🗿</div>
+</div>
+<div class="meme-caption">
+Teacher: "Explain your project."
+<div class="malayalam">
+Student: "Actually sir... banana aanu."
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">SUPPLY</span>
+<div class="face">😭</div>
+</div>
+<div class="meme-caption">
+Result: SUPPLY
+<div class="malayalam">
+"Ini next attempt-il nokkam." 💀
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">CODING</span>
+<div class="face">🤯💻</div>
+</div>
+<div class="meme-caption">
+Python: Syntax Error
+<div class="malayalam">
+"Life error aanu sir." 😭
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">ATTENDANCE</span>
+<div class="face">😎</div>
+</div>
+<div class="meme-caption">
+Attendance: 38%
+<div class="malayalam">
+Confidence: 100% 😎
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">GROUP PROJECT</span>
+<div class="face">👨‍💻👀👀</div>
+</div>
+<div class="meme-caption">
+4 members.
+<div class="malayalam">
+1 worker + 3 spectators. 😂
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">DEADLINE</span>
+<div class="face">🏃💨</div>
+</div>
+<div class="meme-caption">
+Deadline: TODAY
+<div class="malayalam">
+"Da file ayacho?" 😭
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">GRAPHICS</span>
+<div class="face">✏️😵</div>
+</div>
+<div class="meme-caption">
+Engineering Graphics
+<div class="malayalam">
+"Oru line = 45 minutes." 💀
+</div>
+</div>
+</div>
+
+
+<div class="meme">
+<div class="meme-picture">
+<span class="movie-tag">COLLEGE LIFE</span>
+<div class="face">😴</div>
+</div>
+<div class="meme-caption">
+8 AM Class
+<div class="malayalam">
+"Body college-il, soul bed-il." 😂
+</div>
+</div>
+</div>
+
+</div>
+
+
+<!-- MEME GENERATOR -->
+
+<div class="section-title">😂 MALAYALAM MEME GENERATOR</div>
+
+<div class="generator">
+
+<div id="generatedMeme">
+Click the button and suffer.
+</div>
+
+<button onclick="generateMeme()">🎬 GENERATE MOVIE MEME</button>
+
+</div>
+
+
+<div class="section-title">💻 BANANA TERMINAL</div>
+
+<div class="terminal">
+<div id="terminal">
+> Banana OS booting...
+> Loading useless AI...
+> Connecting to banana server...
+> Connection successful.
+> Reason for connection: Nobody knows.
+</div>
+</div>
+
+</div>
+
+
+<footer>
+🍌 BANANA OS™ 2026<br>
+Made for absolutely no useful reason.<br><br>
+<strong>© B.Tech Students Who Had Too Much Free Time</strong>
+</footer>
+
+
+<!-- MODAL -->
+
+<div class="modal" id="modal">
+
+<div class="modal-box">
+
+<h2 id="modalTitle">Banana</h2>
+
+<p id="modalText"></p>
+
+<button class="close" onclick="closeModal()">CLOSE</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+let rotation = 0;
+
+const messages = [
+"🍌 Banana is rotating for no reason.",
+"🤖 AI detected: Banana.",
+"😂 System has discovered absolutely nothing.",
+"💀 This project could have been useful.",
+"🎓 B.Tech level uselessness achieved.",
+"🍌 Banana says: ente pani nokkeda.",
+"😭 Sir is approaching. Hide the project.",
+"⚠️ Supply detected nearby.",
+"🧠 Banana IQ increased by 0.2.",
+"📚 Study detected... just kidding."
+];
+
+const moods = [
+"Confused",
+"Angry",
+"Sleepy",
+"Happy",
+"Dead Inside",
+"Engineering",
+"Overthinking"
+];
+
+
+function rotateBanana(){
+
+    const banana = document.getElementById("banana");
+
+    banana.classList.add("rotating");
+
+    rotation += Math.floor(Math.random()*360)+1;
+
+    document.getElementById("rotation").innerText =
+        (rotation % 360) + "°";
+
+    document.getElementById("message").innerText =
+        "🍌 " + messages[Math.floor(Math.random()*messages.length)];
+
+    setTimeout(()=>{
+        banana.classList.remove("rotating");
+    },700);
+}
+
+
+function scanBanana(){
+
+    document.getElementById("message").innerText =
+        "🤖 AI scanning banana...";
+
+    setTimeout(()=>{
+
+        let iq = Math.floor(Math.random()*98)+2;
+        let threat = Math.floor(Math.random()*101);
+
+        document.getElementById("iq").innerText = iq;
+
+        document.getElementById("threat").innerText =
+            threat + "%";
+
+        document.getElementById("mood").innerText =
+            moods[Math.floor(Math.random()*moods.length)];
+
+        document.getElementById("message").innerText =
+            "🤖 Scan complete. Result: Still a banana.";
+
+        terminalLog("AI scan completed. Intelligence: " + iq);
+
+    },1200);
+}
+
+
+function randomEvent(){
+
+    const events = [
+        "🍌 Banana escaped from laboratory.",
+        "😂 Banana has joined a WhatsApp group.",
+        "📚 Banana started studying Engineering Maths.",
+        "💀 Banana got a supply.",
+        "🎓 Banana graduated B.Tech.",
+        "🚨 Banana was caught cheating in viva.",
+        "❤️ Banana found true love.",
+        "💻 Banana learned Python.",
+        "😴 Banana skipped class.",
+        "🔥 Banana started a startup."
+    ];
+
+    document.getElementById("message").innerText =
+        events[Math.floor(Math.random()*events.length)];
+
+    terminalLog("Random event generated.");
+
+}
+
+
+function emergency(){
+
+    document.getElementById("message").innerText =
+        "🚨🚨🚨 BANANA EMERGENCY 🚨🚨🚨";
+
+    document.body.style.animation =
+        "shake .1s infinite";
+
+    setTimeout(()=>{
+        document.body.style.animation="";
+    },1000);
+
+    terminalLog("EMERGENCY MODE ACTIVATED.");
+
+}
+
+
+function terminalLog(text){
+
+    const terminal = document.getElementById("terminal");
+
+    terminal.innerText +=
+        "\n> " + text;
+
+    terminal.scrollTop = terminal.scrollHeight;
+}
+
+
+function openModal(title,text){
+
+    document.getElementById("modalTitle").innerText = title;
+
+    document.getElementById("modalText").innerText = text;
+
+    document.getElementById("modal").style.display = "flex";
+}
+
+
+function closeModal(){
+
+    document.getElementById("modal").style.display = "none";
+
+}
+
+
+const memes = [
+
+"🎬 Mammookka mode ON: Sir project useful aano? → Sir, banana rotate cheyyum. 🍌",
+
+"😂 Mohanlal-style confidence: Attendance 32% aanu... pakshe pass aavum.",
+
+"😭 Exam tomorrow: 'Da padicho?' → 'Athe da...' → Instagram open.",
+
+"💀 Supply result kandappol: 'Ithokke jeevithathinte bhaagam alle.'",
+
+"🤯 Python error: 'Syntax Error' → Student: 'Sir, system enne target cheyyunnu.'",
+
+"😎 Viva: Teacher asks one question. Student gives 17-minute backstory.",
+
+"🏃 Deadline today: Group members suddenly become Olympic runners.",
+
+"📐 Engineering Graphics: Straight line draw cheyyan 45 minutes.",
+
+"💻 Group project: One person codes. Three people say 'super da'.",
+
+"🍌 AI prediction: 99.99% chance that this project is useless.",
+
+"😂 College WiFi: Connected. Internet: Missing.",
+
+"😭 Teacher: Submit before 5 PM. Student: '5 PM which timezone sir?'",
+
+"💀 Lab exam: Code worked yesterday. Today it has decided to become philosophical.",
+
+"🎓 B.Tech survival strategy: Attendance → Prayer → Internal marks → Luck.",
+
+"🔥 Project review: Student explains confidently. Laptop immediately crashes."
+
+];
+
+
+function generateMeme(){
+
+    const box = document.getElementById("generatedMeme");
+
+    box.innerText =
+        memes[Math.floor(Math.random()*memes.length)];
+
+    terminalLog("Malayalam movie meme generated.");
+
+}
+
+
+/* initial random stats */
+
+setInterval(()=>{
+
+    let threat = Math.floor(Math.random()*100);
+
+    document.getElementById("threat").innerText =
+        threat + "%";
+
+},5000);
+
+</script>
+
+</body>
+</html>
