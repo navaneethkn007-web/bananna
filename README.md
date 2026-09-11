@@ -26,15 +26,15 @@ Basically,it does everything except helping you get real work done.
 ## Technical Details
 ### Technologies/Components Used
 For Software:
-- [HTML]
-- [None]
-- [None]
-- [VS code]
+- HTML
+- 
+- None
+- VS code
 
 For Hardware:
-- [Laptop]
+- Laptop
 - 
-- [Keyboard mouse]
+- Keyboard mouse
 
 ### Implementation
 For Software:
