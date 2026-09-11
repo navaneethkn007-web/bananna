@@ -2,7 +2,7 @@
 
 
 
-# [Banana OS] 🎯
+# Banana OS 🎯
 
 
 ## Name
@@ -50,13 +50,8 @@ For Software:
 
 Full Page Screenshot
 
-### Project Demo
-# Video
-[Add your demo video link here]
-*Explain what the video demonstrates*
 
-# Additional Demos
-[Add any extra demo materials/links]
+
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
