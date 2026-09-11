@@ -5,7 +5,7 @@
 # [Banana OS] 🎯
 
 
-## Basic Details
+## Name
 ### Navaneeth kn
 
 
