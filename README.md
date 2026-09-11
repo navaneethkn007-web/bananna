@@ -48,14 +48,7 @@ For Software:
 # Screenshots (Add at least 3)
 <img width="1920" height="4378" alt="screencapture-bananna-xi-vercel-app-2026-09-12-01_11_45" src="https://github.com/user-attachments/assets/524db340-d072-492f-a2d0-6a63f2293d6a" />
 
-![Screenshot2](Add screenshot 2 here with proper name)
-*Add caption explaining what this shows*
-
-![Screenshot3](Add screenshot 3 here with proper name)
-*Add caption explaining what this shows*
-
-
-For Hardware:
+Full Page Screenshot
 
 ### Project Demo
 # Video
@@ -64,11 +57,6 @@ For Hardware:
 
 # Additional Demos
 [Add any extra demo materials/links]
-
-## Team Contributions
-- [Name 1]: [Specific contributions]
-- [Name 2]: [Specific contributions]
-- [Name 3]: [Specific contributions]
 
 ---
 Made with ❤️ at TinkerHub Useless Projects 
