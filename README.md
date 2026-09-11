@@ -6,7 +6,7 @@
 
 
 ## Basic Details
-### Team Name: [Name]
+### Navaneeth kn
 
 
 ### Team Members
