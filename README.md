@@ -27,22 +27,20 @@ Basically,it does everything except helping you get real work done.
 ### Technologies/Components Used
 For Software:
 - HTML
-- 
 - None
 - VS code
 
 For Hardware:
 - Laptop
-- 
 - Keyboard mouse
 
 ### Implementation
 For Software:
-# Installation
-[commands]
 
-# Run
-[commands]
+Html, css, js
+
+# Live Link
+https://bananna-xi.vercel.app/
 
 ### Project Documentation
 For Software:
