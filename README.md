@@ -13,12 +13,12 @@
 ### Project Description
 Banana OS is a funny fictional banana-themed operating system.It includes useless tools,mini games,animations and Malayalam memes.Built using HTML.
 
-### The Problem (that doesn't exist)
+### The Problem 
 Traditional operating systems can be complex and boring for casual users.
 Banana OS was created as a fun and simple alternative for entertiment.
 It makes basic computer concepts more interesting  through memes and humor
 
-### The Solution (that nobody asked for)
+### The Solution 
 banana OS solves boredom by turning the desktop into a banana-powered chaos zone.
 it provides useless apps,funny notifications,mini-games and Malayalam memes.
 Basically,it does everything except helping you get real work done.
@@ -27,7 +27,6 @@ Basically,it does everything except helping you get real work done.
 ### Technologies/Components Used
 For Software:
 - HTML
-- None
 - VS code
 
 For Hardware:
